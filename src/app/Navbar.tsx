@@ -11,6 +11,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import ThemeSwitch from "./ThemeSwitch";
 
 export default function Navbar() {
   return (
@@ -22,9 +23,11 @@ export default function Navbar() {
           </Link>
           <NavigationMenu>
             <NavigationMenuList className="flex gap-0">
-              <NavigationMenuItem className="px-4">
+              <NavigationMenuItem>
                 <Link href="/research" legacyBehavior passHref>
-                  <NavigationMenuLink>Research</NavigationMenuLink>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Research
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -213,14 +216,16 @@ export default function Navbar() {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem className="px-4">
+              <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink>About us</NavigationMenuLink>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    About us
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/careers" legacyBehavior passHref>
-                  <NavigationMenuLink className="px-4">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Careers
                   </NavigationMenuLink>
                 </Link>
@@ -228,6 +233,7 @@ export default function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
+        <ThemeSwitch />
       </div>
     </header>
   );
