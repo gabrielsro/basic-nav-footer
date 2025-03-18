@@ -12,16 +12,18 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import ThemeSwitch from "./ThemeSwitch";
+import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
   return (
     <header className="bg-background shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 p-5">
+        <MobileMenu />
         <div className="flex flex-wrap items-center gap-20">
           <Link href={"/"}>
             <Image src={logo} alt="Company logo" width={40} height={40} />
           </Link>
-          <NavigationMenu>
+          <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="flex gap-0">
               <NavigationMenuItem>
                 <Link href="/research" legacyBehavior passHref>
